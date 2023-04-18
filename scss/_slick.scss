@@ -1,0 +1,87 @@
+// Конкретный слайдер
+.slider {
+   position: relative;
+   .slick-track {
+      display: flex;
+      align-items: flex-start;
+   }
+   .slick-list {
+      position: relative;
+      // margin: 0 -7vw
+      overflow: hidden;
+   }
+   .slider__item {
+      margin: 0 40px 0 0;
+   }
+   
+   .slick-arrow {
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+      height: 48px;
+      width: 48px;
+      z-index: 100;
+      font-size: 0;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      &.slick-prev {
+         right: 56px;
+         background: url('../icons/left.svg') center center/contain no-repeat;
+         background-size: 24px;
+         background-color: #d6d5d5;
+      }
+      &.slick-next {
+         background: url('../icons/right.svg') center center/contain no-repeat;
+         background-size: 24px;
+         background-color: #6E6E6F;
+      }
+   }
+   .slick-dots {
+      position: absolute;
+      top: 27px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-around;
+      li {
+         display: flex;
+         position: relative;
+         padding-right: 10px;
+         &:last-child {
+            padding: 0
+         }
+      }
+      button {
+         font-size: 0;
+         display: block;
+         position: relative;
+         padding: 17px;
+         border: 2px solid transparent;
+         border-radius: 50%;
+         background-color: transparent;
+         cursor: pointer;
+         &::before {
+            display: block;
+            content:'';
+            position: absolute;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            height: 11px;
+            width: 11px;
+            border-radius: 50%;
+            background-color: #fff;
+         }
+      }
+      .slick-active {
+         button {
+            border: 2px solid #6E6E6F;
+            &::before {
+               background-color: #6E6E6F
+            }
+         }
+      }
+   }
+}
